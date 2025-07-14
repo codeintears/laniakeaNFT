@@ -13,11 +13,12 @@
       <span>💎 TON: <span id="ton-balance">245.5</span></span>
       <span>⭐ Stars: <span id="stars-balance">1320</span></span>
     </div>
-    <div class="cart-button" onclick="toggleCart()">🛒 <span id="cart-count">0</span></div>
+    <div class="cart-button" onclick="showSection('cart')">🛒 <span id="cart-count">0</span></div>
   </header>
 
-  <main class="content">
+  <main>
     <section id="gifts" class="section active">
+      <h2>Limited NFT Gifts</h2>
       <div class="categories">
         <button onclick="filterCategory('all')">All</button>
         <button onclick="filterCategory('pepe')">Pepe</button>
@@ -28,19 +29,24 @@
       <div class="gift-grid" id="gift-grid"></div>
     </section>
 
+    <section id="referrals" class="section">
+      <h2>👥 Your Referrals</h2>
+      <p>Invite friends and earn bonuses.</p>
+    </section>
+
     <section id="profile" class="section">
       <h2>👤 My Profile</h2>
-      <div class="profile-info">
-        <img src="avatar_placeholder.png" alt="Avatar" class="avatar" />
-        <p>ID: <span id="user-id">12345678</span></p>
-        <p>Spent: <span id="total-spent">3420 ⭐</span></p>
-        <p>Gifts Purchased: <span id="gifts-purchased">12</span></p>
+      <div class="profile-box">
+        <img src="avatar_placeholder.png" class="avatar" alt="avatar" />
+        <p>ID: <span id="user-id">#7013341971</span></p>
+        <p>Purchased: <span id="purchases">4</span></p>
+        <p>Total Spent: <span id="spent">3,200 ⭐</span></p>
+        <p>Referrals: <span id="ref-count">12</span></p>
         <p>Registered: <span id="reg-date">2024-04-12</span></p>
-        <p>Referrals: <span id="referral-count">4</span></p>
       </div>
     </section>
 
-    <section id="cart" class="section hidden">
+    <section id="cart" class="section">
       <h2>🛒 Cart</h2>
       <div id="cart-items"></div>
       <div class="checkout">
@@ -52,9 +58,9 @@
 
   <nav class="bottom-nav">
     <button onclick="showSection('gifts')">🎁 Gifts</button>
+    <button onclick="showSection('referrals')">👥 Referrals</button>
     <button onclick="showSection('profile')">👤 Profile</button>
     <button onclick="showSection('cart')">🛒 Cart</button>
   </nav>
 </body>
 </html>
-
