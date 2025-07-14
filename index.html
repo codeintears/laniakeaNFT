@@ -3,48 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NFT Gift Shop</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+  <title>🎁 NFT Gift Store</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script defer src="https://unpkg.com/alpinejs" defer></script>
+  <style>
+    body {
+      background: radial-gradient(ellipse at top left, #1e1e2f, #0f0f1a);
+    }
+    .card:hover {
+      transform: scale(1.02);
+      transition: transform 0.3s ease;
+    }
+  </style>
 </head>
-<body class="dark-theme">
-  <header class="header">
-    <div class="logo">🎁 NFT Gift Shop</div>
-    <div class="cart-icon">🛒</div>
+<body class="text-white font-sans">
+  <header class="flex justify-between items-center p-4 bg-gray-900 shadow">
+    <h1 class="text-2xl font-bold">🌟 NFT Gift Store</h1>
+    <div class="text-xl">🛒</div>
   </header>
 
-  <nav class="main-buttons">
-    <button onclick="showSection('gifts')">Gift</button>
-    <button onclick="showSection('stars')">Stars</button>
-    <button onclick="showSection('referrals')">Referrals</button>
-    <button onclick="showSection('profile')">Profile</button>
+  <nav class="flex justify-around bg-gray-800 text-sm p-2">
+    <button class="hover:text-yellow-400" onclick="showSection('gifts')">🎁 Gifts</button>
+    <button class="hover:text-yellow-400" onclick="showSection('stars')">⭐ Stars</button>
+    <button class="hover:text-yellow-400" onclick="showSection('referrals')">📣 Referrals</button>
+    <button class="hover:text-yellow-400" onclick="showSection('profile')">👤 Profile</button>
   </nav>
 
-  <section id="gifts" class="section active">
-    <h2>Available NFT Gifts</h2>
-    <div class="gift-grid" id="gift-grid"></div>
-  </section>
+  <main class="p-4">
+    <section id="gifts" class="section">
+      <h2 class="text-xl mb-4 font-semibold">Available NFT Gifts</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+        <div class="card bg-gray-800 rounded-xl p-3">
+          <img src="https://cdn3.iconfinder.com/data/icons/social-media-2169/24/social_media_social_media_logo_gift-512.png" alt="Gift 1" class="rounded mb-2">
+          <h3 class="text-lg font-bold">Telegram Heart</h3>
+          <p class="text-sm text-gray-400">Category: Rare</p>
+          <p class="text-yellow-400 font-semibold">412 ⭐</p>
+          <button class="mt-2 px-3 py-1 bg-yellow-400 text-black rounded hover:bg-yellow-300">Buy</button>
+        </div>
+        <div class="card bg-gray-800 rounded-xl p-3">
+          <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="Gift 2" class="rounded mb-2">
+          <h3 class="text-lg font-bold">Fire Rocket</h3>
+          <p class="text-sm text-gray-400">Category: Seasonal</p>
+          <p class="text-yellow-400 font-semibold">215 ⭐</p>
+          <button class="mt-2 px-3 py-1 bg-yellow-400 text-black rounded hover:bg-yellow-300">Buy</button>
+        </div>
+        <!-- Add more cards dynamically -->
+      </div>
+    </section>
 
-  <section id="stars" class="section">
-    <h2>💎 Stars</h2>
-    <p>Buy Stars, check your balance, and top up.</p>
-  </section>
+    <section id="stars" class="section hidden">
+      <h2 class="text-xl mb-4">💎 Buy Stars</h2>
+      <p class="text-gray-300">You can top up your Stars balance and use them to buy gifts.</p>
+    </section>
 
-  <section id="referrals" class="section">
-    <h2>📣 Referral Program</h2>
-    <p>Invite friends and earn Stars.</p>
-    <div id="referral-info"></div>
-  </section>
+    <section id="referrals" class="section hidden">
+      <h2 class="text-xl mb-4">📣 Referral Program</h2>
+      <p class="text-gray-300">Invite friends and earn bonuses.</p>
+    </section>
 
-  <section id="profile" class="section">
-    <h2>👤 My Profile</h2>
-    <div class="profile-info">
-      <img src="avatar_placeholder.png" alt="Avatar" class="avatar" />
-      <p>ID: <span id="user-id">12345678</span></p>
-      <p>Balance: <span id="balance">0 ⭐</span></p>
-      <p>Gifts Purchased: <span id="gifts-purchased">0</span></p>
-      <p>Referrals: <span id="referral-count">0</span></p>
-    </div>
-  </section>
+    <section id="profile" class="section hidden">
+      <h2 class="text-xl mb-4">👤 My Profile</h2>
+      <div class="bg-gray-800 p-4 rounded-xl">
+        <div class="flex items-center mb-4">
+          <img src="https://i.pravatar.cc/60" class="rounded-full w-12 h-12 mr-4" alt="Avatar">
+          <div>
+            <p>ID: <span class="font-mono">@user123</span></p>
+            <p>Balance: <span class="font-semibold text-yellow-400">842 ⭐</span></p>
+          </div>
+        </div>
+        <p>🎁 Gifts Purchased: <strong>4</strong></p>
+        <p>🧾 Total Spent: <strong>1283 ⭐</strong></p>
+        <p>👥 Referrals: <strong>3</strong></p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.add('hidden');
+      });
+      document.getElementById(id).classList.remove('hidden');
+    }
+  </script>
 </body>
 </html>
