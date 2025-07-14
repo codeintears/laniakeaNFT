@@ -1,32 +1,26 @@
 
-const gifts = [
-  { name: "Plush Pepe", price: "1342 ⭐", img: "https://i.ibb.co/4fPlushPepe.png" },
-  { name: "Loot Bags", price: "1210 ⭐", img: "https://i.ibb.co/lootbags.png" },
-  { name: "Vintage Cigars", price: "980 ⭐", img: "https://i.ibb.co/vintagecigars.png" },
-  { name: "Lol Pops", price: "860 ⭐", img: "https://i.ibb.co/lolpops.png" },
-  { name: "Toy Bear", price: "720 ⭐", img: "https://i.ibb.co/toybear.png" },
-  { name: "Snoop Cigar", price: "645 ⭐", img: "https://i.ibb.co/SnoopCigar.png" },
-  { name: "Snoop Premium", price: "1950 ⭐", img: "https://i.ibb.co/SnoopPremium.png" }
-];
+document.addEventListener("DOMContentLoaded", () => {
+  const nftData = [
+    { name: "Golden Telegram", price: "1342 ⭐", img: "https://i.postimg.cc/QMF9PzXp/golden-telegram.png" },
+    { name: "TON Rocket", price: "1175 ⭐", img: "https://i.postimg.cc/Bn9mXtnp/ton-rocket.png" },
+    { name: "Birthday Cake", price: "960 ⭐", img: "https://i.postimg.cc/x1PYB9CS/birthday-cake.png" },
+    { name: "TON Whale", price: "1538 ⭐", img: "https://i.postimg.cc/g2fgnPyq/ton-whale.png" }
+  ];
 
-function showSection(id) {
-  document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-}
-
-function renderGifts() {
-  const grid = document.getElementById('gift-grid');
-  gifts.forEach(gift => {
-    const card = document.createElement('div');
-    card.className = 'gift-card';
+  const grid = document.getElementById("gift-grid");
+  nftData.forEach(nft => {
+    const card = document.createElement("div");
+    card.className = "nft-card";
     card.innerHTML = \`
-      <img src="\${gift.img}" alt="\${gift.name}" />
-      <h3>\${gift.name}</h3>
-      <p>\${gift.price}</p>
-      <button>Buy</button>
+      <img src="\${nft.img}" alt="\${nft.name}" />
+      <h4>\${nft.name}</h4>
+      <p>\${nft.price}</p>
     \`;
     grid.appendChild(card);
   });
-}
+});
 
-document.addEventListener('DOMContentLoaded', renderGifts);
+function showTab(id) {
+  document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+}
