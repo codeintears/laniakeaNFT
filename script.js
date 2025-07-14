@@ -1,26 +1,23 @@
+const gifts = [
+  { id: 1, name: 'Pepe Chill', category: 'pepe', price: 520 },
+  { id: 2, name: 'Party Doge', category: 'memes', price: 440 },
+  { id: 3, name: 'Rare Unicorn', category: 'rare', price: 610 },
+];
 
-document.addEventListener("DOMContentLoaded", () => {
-  const nftData = [
-    { name: "Golden Telegram", price: "1342 ⭐", img: "https://i.postimg.cc/QMF9PzXp/golden-telegram.png" },
-    { name: "TON Rocket", price: "1175 ⭐", img: "https://i.postimg.cc/Bn9mXtnp/ton-rocket.png" },
-    { name: "Birthday Cake", price: "960 ⭐", img: "https://i.postimg.cc/x1PYB9CS/birthday-cake.png" },
-    { name: "TON Whale", price: "1538 ⭐", img: "https://i.postimg.cc/g2fgnPyq/ton-whale.png" }
-  ];
+let cart = [];
 
-  const grid = document.getElementById("gift-grid");
-  nftData.forEach(nft => {
-    const card = document.createElement("div");
-    card.className = "nft-card";
-    card.innerHTML = \`
-      <img src="\${nft.img}" alt="\${nft.name}" />
-      <h4>\${nft.name}</h4>
-      <p>\${nft.price}</p>
-    \`;
-    grid.appendChild(card);
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function filterCategory(cat) {
+  const grid = document.getElementById('gift-grid');
+  grid.innerHTML = '';
+  gifts.filter(g => cat === 'all' || g.category === cat).forEach(gift => {
+    const div = document.createElement('div');
+    div.className = 'gift-card';
+    div.innerHTML = `<p>${gift.name}</p><p>⭐ ${gift.price}</p><button onclick="addToCart(${gift.id})">Add</button>`;
+    grid.appendChild(div);
   });
-});
-
-function showTab(id) {
-  document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
-  document.getElementById(id).classList.add("active");
 }
