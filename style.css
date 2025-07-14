@@ -1,71 +1,62 @@
 
-body.dark-theme {
-  background-color: #121212;
-  color: white;
-  font-family: Arial, sans-serif;
+body {
   margin: 0;
-  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f0f1a;
+  color: #fff;
 }
-
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 1rem;
-  background-color: #1e1e1e;
+  background: #1c1c2b;
+  font-size: 1.2rem;
 }
-
-.logo {
-  font-size: 1.5rem;
-}
-
-.main-buttons {
+.nav-tabs {
   display: flex;
   justify-content: space-around;
-  background: #222;
-  padding: 1rem 0;
+  background: #1a1a26;
 }
-
-.main-buttons button {
-  background: #333;
+.nav-tabs button {
+  flex: 1;
+  padding: 1rem;
+  background: transparent;
+  color: #ccc;
   border: none;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  cursor: pointer;
+  font-size: 1rem;
 }
-
-.section {
+.nav-tabs button:hover,
+.nav-tabs button:focus {
+  background: #26263a;
+  color: #fff;
+}
+.tab {
   display: none;
   padding: 1rem;
 }
-
-.section.active {
+.tab.active {
   display: block;
 }
-
-.gift-grid {
+.nft-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   gap: 1rem;
 }
-
-.gift-card {
-  background: #1e1e1e;
-  border-radius: 12px;
-  padding: 1rem;
+.nft-card {
+  background: #1e1e30;
+  padding: 0.5rem;
+  border-radius: 8px;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
-
-.gift-card img {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
+.nft-card img {
+  width: 100%;
+  border-radius: 6px;
 }
-
+.profile-box {
+  text-align: center;
+}
 .avatar {
-  width: 80px;
-  height: 80px;
+  width: 100px;
   border-radius: 50%;
+  margin-bottom: 1rem;
 }
