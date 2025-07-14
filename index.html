@@ -1,82 +1,52 @@
-ggп<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Telegram NFT Gifts</title>
+  <title>🎁 NFT Gift Shop</title>
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
-<body>
-  <header>
-    <h1>🎁 NFT Gift Shop</h1>
+<body class="dark-theme">
+  <header class="header">
+    <div class="logo">NFT Gift Shop</div>
+    <div class="cart-icon">🛒</div>
   </header>
 
-  <div class="main-buttons">
+  <nav class="main-buttons">
     <button onclick="showSection('gifts')">Gift</button>
     <button onclick="showSection('stars')">StarsTON</button>
     <button onclick="showSection('referrals')">Referrals</button>
-  </div>
+    <button onclick="showSection('profile')">Profile</button>
+  </nav>
 
   <section id="gifts" class="section active">
     <h2>Available NFT Gifts</h2>
     <div class="gift-grid">
-      <div class="gift-card">
-        <img src="party_dog.png" alt="Party Dog">
-        <p>Party Dog</p>
-        <span>300 TON</span>
-      </div>
-      <div class="gift-card">
-        <img src="nice_present.png" alt="Nice Present">
-        <p>Nice Present</p>
-        <span>5000 ⭐ Stars</span>
-      </div>
-      <div class="gift-card">
-        <img src="cake.png" alt="Cake">
-        <p>Cake</p>
-        <span>400 TON</span>
-      </div>
-      <div class="gift-card">
-        <img src="golden_gift.png" alt="Golden Gift">
-        <p>Golden Gift</p>
-        <span>800 TON</span>
-      </div>
-      <div class="gift-card">
-        <img src="star.png" alt="Star">
-        <p>Star</p>
-        <span>1500 ⭐ Stars</span>
-      </div>
-      <div class="gift-card">
-        <img src="ton_rocket.png" alt="TON Rocket">
-        <p>TON Rocket</p>
-        <span>600 TON</span>
-      </div>
-      <div class="gift-card">
-        <img src="love.png" alt="Love">
-        <p>Love</p>
-        <span>420 TON</span>
-      </div>
-      <div class="gift-card">
-        <img src="halloween.png" alt="Halloween">
-        <p>Halloween</p>
-        <span>550 TON</span>
-      </div>
-      <div class="gift-card">
-        <img src="winter_fox.png" alt="Winter Fox">
-        <p>Winter Fox</p>
-        <span>700 TON</span>
-      </div>
+      <!-- Dynamic cards will be rendered here via JS -->
     </div>
   </section>
 
   <section id="stars" class="section">
-    <h2>💎 StarsTON Coming Soon</h2>
-    <p>Buy Stars, check balance and top-up your wallet here.</p>
+    <h2>💎 StarsTON</h2>
+    <p>Buy Stars, check your balance, and top up.</p>
   </section>
 
   <section id="referrals" class="section">
     <h2>📣 Referral Program</h2>
-    <p>Share your invite and earn rewards in TON or Stars!</p>
+    <p>Invite friends and earn TON/Stars.</p>
+    <div id="referral-info"></div>
+  </section>
+
+  <section id="profile" class="section">
+    <h2>👤 My Profile</h2>
+    <div class="profile-info">
+      <img src="avatar_placeholder.png" alt="Avatar" class="avatar" />
+      <p>ID: <span id="user-id">12345678</span></p>
+      <p>Balance: <span id="balance">0 TON / 0 ⭐</span></p>
+      <p>Gifts Purchased: <span id="gifts-purchased">0</span></p>
+      <p>Referrals: <span id="referral-count">0</span></p>
+    </div>
   </section>
 </body>
 </html>
