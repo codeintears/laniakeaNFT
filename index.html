@@ -3,38 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🎁 NFT Gift Shop</title>
+  <title>NFT Gift Shop</title>
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
 <body class="dark-theme">
   <header class="header">
-    <div class="logo">NFT Gift Shop</div>
+    <div class="logo">🎁 NFT Gift Shop</div>
     <div class="cart-icon">🛒</div>
   </header>
 
   <nav class="main-buttons">
     <button onclick="showSection('gifts')">Gift</button>
-    <button onclick="showSection('stars')">StarsTON</button>
+    <button onclick="showSection('stars')">Stars</button>
     <button onclick="showSection('referrals')">Referrals</button>
     <button onclick="showSection('profile')">Profile</button>
   </nav>
 
   <section id="gifts" class="section active">
     <h2>Available NFT Gifts</h2>
-    <div class="gift-grid">
-      <!-- Dynamic cards will be rendered here via JS -->
-    </div>
+    <div class="gift-grid" id="gift-grid"></div>
   </section>
 
   <section id="stars" class="section">
-    <h2>💎 StarsTON</h2>
+    <h2>💎 Stars</h2>
     <p>Buy Stars, check your balance, and top up.</p>
   </section>
 
   <section id="referrals" class="section">
     <h2>📣 Referral Program</h2>
-    <p>Invite friends and earn TON/Stars.</p>
+    <p>Invite friends and earn Stars.</p>
     <div id="referral-info"></div>
   </section>
 
@@ -43,7 +41,7 @@
     <div class="profile-info">
       <img src="avatar_placeholder.png" alt="Avatar" class="avatar" />
       <p>ID: <span id="user-id">12345678</span></p>
-      <p>Balance: <span id="balance">0 TON / 0 ⭐</span></p>
+      <p>Balance: <span id="balance">0 ⭐</span></p>
       <p>Gifts Purchased: <span id="gifts-purchased">0</span></p>
       <p>Referrals: <span id="referral-count">0</span></p>
     </div>
