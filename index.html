@@ -3,49 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NFT MiniApp</title>
+  <title>Laniakea NFT MiniApp</title>
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
-<body class="dark-theme">
+<body class="dark">
   <header class="header">
-    <div class="logo">🎁 NFT Gifts</div>
-    <div class="cart-icon">🛒</div>
+    <div class="logo">🌌 Laniakea NFT</div>
+    <div class="cart">🛒</div>
   </header>
-
-  <nav class="nav-bar">
-    <button onclick="showSection('gifts')">Gift</button>
-    <button onclick="showSection('stars')">Stars</button>
-    <button onclick="showSection('referrals')">Referrals</button>
-    <button onclick="showSection('profile')">Profile</button>
+  <nav class="nav-tabs">
+    <button onclick="showTab('gifts')">🎁 Gifts</button>
+    <button onclick="showTab('stars')">⭐ Stars</button>
+    <button onclick="showTab('referrals')">👥 Referrals</button>
+    <button onclick="showTab('profile')">👤 Profile</button>
   </nav>
-
   <main>
-    <section id="gifts" class="section active">
-      <h2>All Gifts</h2>
-      <div class="gift-container" id="gift-container"></div>
+    <section id="gifts" class="tab active">
+      <h2>Limited NFT Gifts</h2>
+      <div class="nft-grid" id="gift-grid"></div>
     </section>
-
-    <section id="stars" class="section">
-      <h2>💎 Stars</h2>
-      <p>Buy Stars, check your balance, and transfer them easily.</p>
+    <section id="stars" class="tab">
+      <h2>Buy Stars</h2>
+      <p>Purchase Stars to use across the app.</p>
     </section>
-
-    <section id="referrals" class="section">
-      <h2>📣 Referral Program</h2>
-      <p>Refer your friends and earn ⭐!</p>
+    <section id="referrals" class="tab">
+      <h2>Your Referrals</h2>
+      <p>Invite friends and earn bonuses.</p>
     </section>
-
-    <section id="profile" class="section">
-      <h2>👤 Profile</h2>
-      <div class="profile-info">
-        <img src="https://via.placeholder.com/80" alt="Avatar" class="avatar" />
-        <p><strong>ID:</strong> <span id="user-id">12345678</span></p>
-        <p><strong>Balance:</strong> <span id="balance">0 ⭐</span></p>
-        <p><strong>Gifts Purchased:</strong> <span id="gifts-purchased">0</span></p>
-        <p><strong>Referrals:</strong> <span id="referral-count">0</span></p>
+    <section id="profile" class="tab">
+      <h2>My Profile</h2>
+      <div class="profile-box">
+        <img src="avatar_placeholder.png" class="avatar" alt="avatar"/>
+        <p>ID: <span id="user-id">#7013341971</span></p>
+        <p>Purchased: <span id="purchases">4</span></p>
+        <p>Total Spent: <span id="spent">3,200 ⭐</span></p>
+        <p>Referrals: <span id="ref-count">12</span></p>
       </div>
     </section>
   </main>
 </body>
 </html>
+
