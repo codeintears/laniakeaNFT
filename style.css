@@ -1,62 +1,77 @@
-
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #0f0f1a;
+  background-color: #111;
   color: #fff;
 }
-.header {
+.top-bar {
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
-  background: #1c1c2b;
-  font-size: 1.2rem;
+  padding: 1em;
+  background-color: #1a1a1a;
+  position: sticky;
+  top: 0;
 }
-.nav-tabs {
+.balance span {
+  margin-right: 1em;
+}
+.cart-button {
+  cursor: pointer;
+}
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #222;
   display: flex;
   justify-content: space-around;
-  background: #1a1a26;
+  padding: 0.8em 0;
 }
-.nav-tabs button {
-  flex: 1;
-  padding: 1rem;
-  background: transparent;
-  color: #ccc;
+.bottom-nav button {
+  background: none;
   border: none;
-  font-size: 1rem;
+  color: white;
+  font-size: 1.2em;
 }
-.nav-tabs button:hover,
-.nav-tabs button:focus {
-  background: #26263a;
-  color: #fff;
-}
-.tab {
+.section {
   display: none;
-  padding: 1rem;
+  padding: 1em;
 }
-.tab.active {
+.section.active {
   display: block;
 }
-.nft-grid {
+.gift-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1em;
 }
-.nft-card {
-  background: #1e1e30;
-  padding: 0.5rem;
-  border-radius: 8px;
-  text-align: center;
-}
-.nft-card img {
-  width: 100%;
-  border-radius: 6px;
-}
-.profile-box {
+.gift-card {
+  background: #222;
+  padding: 1em;
+  border-radius: 10px;
   text-align: center;
 }
 .avatar {
-  width: 100px;
+  width: 80px;
   border-radius: 50%;
-  margin-bottom: 1rem;
+}
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin-bottom: 1em;
+}
+.categories button {
+  background: #333;
+  border: none;
+  padding: 0.5em 1em;
+  color: #fff;
+  border-radius: 20px;
+}
+.checkout {
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
