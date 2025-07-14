@@ -1,66 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🎁 NFT Gift Store</title>
+  <title>🎁 NFT Подарки</title>
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
 <body class="dark-theme">
   <header class="top-bar">
     <div class="balance">
-      <span>💎 TON: <span id="ton-balance">245.5</span></span>
-      <span>⭐ Stars: <span id="stars-balance">1320</span></span>
+      <span>💎 TON: <span id="ton-balance">0</span></span>
+      <span>⭐ Звезды: <span id="stars-balance">0</span></span>
     </div>
-    <div class="cart-button" onclick="showSection('cart')">🛒 <span id="cart-count">0</span></div>
+    <div class="cart-button" onclick="toggleCart()">🛒 <span id="cart-count">0</span></div>
   </header>
 
-  <main>
+  <nav class="bottom-nav">
+    <button onclick="showSection('gifts')">🎁 Подарки</button>
+    <button onclick="showSection('referrals')">👥 Рефералы</button>
+    <button onclick="showSection('profile')">👤 Профиль</button>
+    <button onclick="showSection('cart')">🛒 Корзина</button>
+  </nav>
+
+  <main class="content">
     <section id="gifts" class="section active">
-      <h2>Limited NFT Gifts</h2>
       <div class="categories">
-        <button onclick="filterCategory('all')">All</button>
-        <button onclick="filterCategory('pepe')">Pepe</button>
-        <button onclick="filterCategory('memes')">Memes</button>
-        <button onclick="filterCategory('animals')">Animals</button>
-        <button onclick="filterCategory('rare')">Rare</button>
+        <button onclick="filterCategory('all')">Все</button>
+        <button onclick="filterCategory('pepe')">🐸 Pepe</button>
+        <button onclick="filterCategory('memes')">📦 Мемы</button>
+        <button onclick="filterCategory('animals')">🐻 Животные</button>
+        <button onclick="filterCategory('rare')">💎 Редкие</button>
       </div>
       <div class="gift-grid" id="gift-grid"></div>
     </section>
 
     <section id="referrals" class="section">
-      <h2>👥 Your Referrals</h2>
-      <p>Invite friends and earn bonuses.</p>
+      <h2>👥 Реферальная система</h2>
+      <p>Приглашайте друзей и получайте бонусы.</p>
     </section>
 
     <section id="profile" class="section">
-      <h2>👤 My Profile</h2>
-      <div class="profile-box">
-        <img src="avatar_placeholder.png" class="avatar" alt="avatar" />
+      <h2>👤 Профиль</h2>
+      <div class="profile-info">
+        <img src="avatar_placeholder.png" alt="Аватар" class="avatar" />
         <p>ID: <span id="user-id">#7013341971</span></p>
-        <p>Purchased: <span id="purchases">4</span></p>
-        <p>Total Spent: <span id="spent">3,200 ⭐</span></p>
-        <p>Referrals: <span id="ref-count">12</span></p>
-        <p>Registered: <span id="reg-date">2024-04-12</span></p>
+        <p>Покупок: <span id="purchases">4</span></p>
+        <p>Потрачено: <span id="spent">3,200 ⭐</span></p>
+        <p>Рефералов: <span id="ref-count">12</span></p>
+        <p>Зарегистрирован: <span id="reg-date">2024-04-12</span></p>
       </div>
     </section>
 
-    <section id="cart" class="section">
-      <h2>🛒 Cart</h2>
+    <section id="cart" class="section hidden">
+      <h2>🛒 Корзина</h2>
       <div id="cart-items"></div>
       <div class="checkout">
-        <p>Total: <span id="total-price">0 ⭐</span></p>
-        <button onclick="checkout()">Pay</button>
+        <p>Итого: <span id="total-price">0 ⭐</span></p>
+        <button onclick="checkout()">Оплатить</button>
       </div>
     </section>
   </main>
-
-  <nav class="bottom-nav">
-    <button onclick="showSection('gifts')">🎁 Gifts</button>
-    <button onclick="showSection('referrals')">👥 Referrals</button>
-    <button onclick="showSection('profile')">👤 Profile</button>
-    <button onclick="showSection('cart')">🛒 Cart</button>
-  </nav>
 </body>
 </html>
